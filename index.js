@@ -6,41 +6,6 @@ const port = process.env.PORT || 2999;
 
 //mongoose.connect('mongodb://localhost/evalZino');
 
-var forum = [
-    {
-        idTopic : "1",
-        nameTopic : "Quel est votre animal Préféré ?",
-        messagesTopic : [
-            {
-                idMessage : "1",
-                contentMessage : "Moi j'adore les loups ! *.*"
-            },
-            {
-                idMessage : "2",
-                contentMessage : "Moi les chats ! :O Better than everything omg :O"
-            },
-            {
-                idMessage : "3",
-                contentMessage : "Moi j'aime bien Adama :D Sacrée bestiole !"
-            }
-        ]
-    },
-    {
-        idTopic : "2",
-        nameTopic : "Quel est votre professeur préféré ?",
-        messagesTopic : [
-            {
-                idMessage : "1",
-                contentMessage : "Zino ofc !"
-            },
-            {
-                idMessage : "2",
-                contentMessage : "Y a pas meilleur que Zino ! Qui oserait dire le contraire ? :O"
-            }
-        ]
-    }
-];
-
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Origin', req.headers.origin);
@@ -75,3 +40,38 @@ app.post('/topics/:id/new', function(req, res) {
 });
 
 app.listen(port, "192.168.43.224",  () => console.log(`App listening on 192.168.43.224:${port}`));
+
+var forum = [
+    {
+        id : "1",
+        title : "Quel est votre animal Préféré ?",
+        messages : [
+            {
+                id : "1",
+                content : "Moi j'adore les loups ! *.*"
+            },
+            {
+                id : "2",
+                content : "Moi les chats ! :O Better than everything omg :O"
+            },
+            {
+                id : "3",
+                content : "Moi j'aime bien Adama :D Sacrée bestiole !"
+            }
+        ]
+    },
+    {
+        id : "2",
+        title : "Quel est votre professeur préféré ?",
+        messages : [
+            {
+                id : "1",
+                content : "Zino ofc !"
+            },
+            {
+                id : "2",
+                content : "Y a pas meilleur que Zino ! Qui oserait dire le contraire ? :O"
+            }
+        ]
+    }
+];
